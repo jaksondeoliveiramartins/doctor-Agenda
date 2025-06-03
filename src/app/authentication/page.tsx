@@ -1,3 +1,5 @@
+
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -6,16 +8,18 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+}  from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import SignUpForm from "./components/sign-up-form";
+
+
 const AuthenticationPage = () => {
+
   return (
     <div className="flex h-screen w-screen items-center justify-center">
-      <Tabs defaultValue="login">
-        <TabsList>
+      <Tabs defaultValue="login" className="w-[400px]">
+        <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="login">Login</TabsTrigger>
           <TabsTrigger value="register">Criar Conta</TabsTrigger>
         </TabsList>
@@ -32,16 +36,7 @@ const AuthenticationPage = () => {
           </Card>
         </TabsContent>
         <TabsContent value="register">
-          <Card>
-            <CardHeader>
-              <CardTitle>Criar conta</CardTitle>
-              <CardDescription>Crie uma conta para continuar.</CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-6"></CardContent>
-            <CardFooter>
-              <Button>Criar conta</Button>
-            </CardFooter>
-          </Card>
+        <SignUpForm />
         </TabsContent>
       </Tabs>
     </div>
